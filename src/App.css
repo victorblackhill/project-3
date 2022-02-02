@@ -36,3 +36,155 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+/*COPY PASTA OF EXISTING STYLE.CSS FROM THE VIEWS -- - - - - - - - - - 
+ --- - --- - -*/
+
+@import url(//db.onlinewebfonts.com/c/ebfdb8a9445aaa9d97a485a5c5a13156?family=canela);
+@font-face {font-family: "canela"; src: url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.eot"); src: url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.woff") format("woff"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.svg#canela") format("svg"); }
+
+@import url(//db.onlinewebfonts.com/c/d0525b7bc409f0a67b670470d5cb960c?family=Graphik+Thin);
+@font-face {font-family: "Graphik Thin"; src: url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.eot"); src: url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.woff") format("woff"), url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.svg#Graphik Thin") format("svg"); }
+
+:root{
+    --alondra-green:#234145;
+    --alondra-orange:#e5a959;
+    --alondra-gray: #ede9e1;
+    --alondra-teal:#ecdcdb;
+
+
+    --alondra-font-complex:"canela";
+    --alondra-font-simple:"Graphik Thin"
+}
+
+:root{
+    background-color: var(--alondra-gray);
+    color: var(--alondra-green);
+    font-family: var(--alondra-font-simple), Arial, Helvetica, sans-serif;
+    max-width:fit-content;
+  }
+
+
+h1,h2 {
+  padding-left : 10px
+}
+
+ h2 {
+    font-family: var(--alondra-font-complex),Arial, Helvetica, sans-serif;
+    color: var(--alondra-green)
+}
+
+footer {
+  font-size:8px
+}
+
+
+/* 
+  Blocks styling -----------------------------------
+*/
+
+.blocks{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.block{
+  background-color: var(--alondra-teal);
+  margin:10px;
+  padding:10px;
+  width: 250px
+
+}
+
+h3 {
+  font-family: var(--alondra-font-complex),Arial, Helvetica, sans-serif;
+  color: var(--alondra-orange);
+  align-self: center;
+  text-align: center;
+} 
+
+i {
+  margin:3px;
+}
+
+.block ul{
+  list-style-type:none;
+  align-self:center;
+  padding-inline-start:0px;
+}
+
+.block ol{
+  
+  align-self:center;
+  padding-inline-start:15px;
+}
+
+.block ul>li{
+  margin-bottom: 10px;
+
+}
+
+/* Comments ----------------------------------------------*/
+.comments ul{
+  list-style-type:none;
+  padding-inline-start:0;
+  
+}
+
+.comments li {
+  background-color: var(--alondra-teal);
+  margin:10px;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  word-wrap: break-word
+}
+
+
+.comments i{
+  align-self: flex-start
+}
+
+.comments ul{
+  display:flex;
+  flex-direction:column-reverse
+}
+
+
+/* Input comment block ------------------------------------*/ 
+.block-comment{
+
+  word-wrap: break-word;
+  background-color: var(--alondra-teal);
+  margin:10px;
+  padding:10px;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.block-comment input,button{
+  color: var(--alondra-green);
+  border-width: thin;
+}
+
+.block-comment input{
+  width:90%;
+  font-family:var(--alondra-font-simple);
+  margin-left:0px;
+  border-color: var(--alondra-gray);
+}
+
+.block-comment button{
+  background-color: var(--alondra-teal);
+  font-family:var(--alondra-font-complex);
+  border-color: var(--alondra-teal);
+  color:var(--alondra-orange);
+  font-variant: bold;
+  width:100px;
+  height:35px
+
+}
