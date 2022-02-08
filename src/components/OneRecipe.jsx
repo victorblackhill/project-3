@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import OneComment from "./OneComment"
 import AddComment from "./AddComment"
 
-function OneRecipe (){
+function OneRecipe ({auth}){
     
     const id = useParams().id
     const [aRecipe,setRecipe] = useState({})
@@ -30,6 +30,8 @@ function OneRecipe (){
 
 
     },[])
+
+    console.log(">>>>",theComments)
 
 
 
@@ -72,11 +74,12 @@ function OneRecipe (){
                 </div>
 
                 <h2>Comments</h2>
-                <AddComment setComments={theComments} id={id} updateComments={updateComments}/>
+                {auth.isLoggedIn && <AddComment setComments={theComments} id={id} updateComments={updateComments} auth={auth}/>}
                 
                 {<div className="comments">
+                <ul>{!auth.isLoggedIn && <li className="comment"> <Link to="/signin" >Signin to comment</Link></li>}</ul>
                 <ul id="comment-list">
-                    {theComments.map((comment)=> <OneComment comment={comment} updateComments={updateComments}/> )}
+                    {theComments.map((comment)=> <OneComment comment={comment} updateComments={updateComments} auth={auth}/> )}
                     </ul>
                 </div>}
 

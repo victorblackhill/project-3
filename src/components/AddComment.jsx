@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import APIHandler from "../api/APIHandler";
 
-function AddComment ({setComments,id,updateComments}){
+function AddComment ({setComments,id,updateComments,auth}){
 
     const [myComment,setMyComment] = useState("")
     
@@ -12,7 +12,8 @@ function AddComment ({setComments,id,updateComments}){
         try{
             const newComment = {
                 content:myComment,
-                recipe:id
+                recipe:id,
+                user:auth.user._id||null
             }
             
             await APIHandler.post("/comment/"+id, newComment)

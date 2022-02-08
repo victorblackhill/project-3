@@ -21,7 +21,7 @@ function Signin({getAuth}){
             const res = await AuthService.signin(user.email, user.password)
             console.log(">  >   >",res)
             getAuth(res, true)
-            //setMessage("User created")
+            setMessage("")
         }catch(e){
             console.log(e.response)
             setMessage(e.response.data.errorMessage||e.response.data.message)}

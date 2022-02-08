@@ -35,7 +35,7 @@ function App() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"></link>
         <Routes>
           <Route path="/" element={<AllRecipes />} />
-          <Route path="/recipes/:id" element={<OneRecipe/>} />
+          <Route path="/recipes/:id" element={<OneRecipe auth={auth}/>} />
           <Route path="/signup" element= {<Signup getAuth={getAuth} />} />
           <Route path="/signin" element= {<Signin getAuth={getAuth} />} />
 

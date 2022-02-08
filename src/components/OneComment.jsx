@@ -1,7 +1,7 @@
 import React from "react";
 import APIHandler from "../api/APIHandler";
 
-function OneComment({comment,updateComments}) {
+function OneComment({comment,updateComments,auth}) {
 
   const deleteComment= async ()=>{
     try{
@@ -10,16 +10,21 @@ function OneComment({comment,updateComments}) {
     }catch(e){console.log(e)}
   }
 
+  console.log(auth,comment.user)
+
 
 
   return (
     <>
       <li key={comment._id} id={comment._id} className="comment">
-        <span data-commentid={comment.id}>{comment.content}</span>
-        <i className="fa fa-trash delete" data-commentid={comment.id} onClick={deleteComment} ></i>
+        <span>{comment.content}</span>
+        <p>by {comment.user.email}</p> 
+        {auth.isLoggedIn && auth.user._id === comment.user._id && <i className="fa fa-trash delete" data-commentid={comment.id} onClick={deleteComment} ></i>}
       </li>
     </>
   );
 }
 
 export default OneComment;
+
+//{auth.isLoggedIn && auth.user._id === comment.user &&<i className="fa fa-trash delete" data-commentid={comment.id} onClick={deleteComment} ></i>}
