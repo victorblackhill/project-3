@@ -16,8 +16,6 @@ function AllRecipes() {
     }
   }, []);
 
-  console.log(recipes);
-
   return (
     <>
       {" "}

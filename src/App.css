@@ -188,3 +188,10 @@ i {
   height:35px
 
 }
+
+/* FlashMessage------------------------------------*/ 
+
+.flash {
+  background-color:var(--alondra-gray);
+  padding:3px
+}
