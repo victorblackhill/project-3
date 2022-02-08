@@ -12,10 +12,25 @@ const signup = async (email, password)=> {
         return res.data
 }
 
+const logout = async () => {
+    const res = service.post("/logout")
+    return res
+}
+
+const signin = async (email, password)=> {
+    const res = await service.post("/login",{email,password})
+    console.log(res)
+    return res.data
+}
+
+
+
 
 const AuthService = {
     ...service,
     signup,
+    logout,
+    signin
 }
 
 export default AuthService

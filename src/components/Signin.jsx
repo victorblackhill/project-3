@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import AuthService from "./../api/AuthService"
+import AuthService from "../api/AuthService"
 
-function Signup({getAuth}){
+function Signin({getAuth}){
 
     const [user,setUser]= useState({email:"",password:""})
     const [message,setMessage] = useState("")
@@ -18,10 +18,10 @@ function Signup({getAuth}){
 
     const send = async ()=>{
         try{
-            const res = await AuthService.signup(user.email, user.password)
+            const res = await AuthService.signin(user.email, user.password)
             console.log(">  >   >",res)
             getAuth(res, true)
-            setMessage("User created")
+            //setMessage("User created")
         }catch(e){
             console.log(e.response)
             setMessage(e.response.data.errorMessage||e.response.data.message)}
@@ -31,7 +31,7 @@ function Signup({getAuth}){
     
 
     return <div className="block-comment" >
-                <h1>Créez votre compte</h1>
+                <h1>Accédez à votre compte</h1>
                 {message && <div className="flash">{message}</div>}
                 <label>
                    <h4>Email</h4>
@@ -52,11 +52,11 @@ function Signup({getAuth}){
                         onChange={handleChangePassword}
                         />
                 </label>
-                <button onClick={send}>Créer mon compte</button>
-                <h3>Vous possédez déja un compte ? C'est par <Link to={"/signin"} >ici</Link> !</h3>
+                <button onClick={send}>Accéder</button>
+                <h3>Vous n'avez pas encore votre compte ? C'est par <Link to={"/signup"} >ici</Link> !</h3>
                 
 
     </div>
 }
 
-export default Signup
+export default Signin
