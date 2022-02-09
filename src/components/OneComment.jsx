@@ -10,6 +10,19 @@ function OneComment({comment,updateComments,auth}) {
     }catch(e){console.log(e)}
   }
 
+  const modifyComment = (e)=>{e.target.toggleAttribute('contentEditable')}
+  const closeComment = (e)=>{e.target.toggleAttribute('contentEditable')}
+  const sendComment = async (e)=>{
+        try{
+        //create a mongo request to be treated
+        console.log(">>>>",{...comment,content:e.target.textContent})
+        const addedComment = await APIHandler.post("/comment/update", {...comment,content:e.target.textContent})
+        console.log(addedComment)
+        updateComments()
+        }catch(err){console.error(err)
+    }
+  }
+
   console.log(auth,comment.user)
 
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -17,13 +30,14 @@ function OneComment({comment,updateComments,auth}) {
   return (
     <>
       <li key={comment._id} className="comment">
-        <span>{comment.content}</span>
+        {auth.isLoggedIn && auth.user._id === comment.user._id && <span onDoubleClick={modifyComment} onBlur={(e)=>{closeComment(e);sendComment(e)}}>{comment.content}</span>}
+        {(!auth.isLoggedIn || !auth.user._id === comment.user._id) && <span>{comment.content}</span>}
         <p>
           <span>Posted on {months[new Date(comment.date).getMonth()]} {new Date(comment.date).getFullYear()} </span>
-          <span>By {comment.user.email}</span>
+          <span>By {comment.user.email.slice(0,comment.user.email.indexOf("@"))}{"*****"}</span>
         </p>
         
-        {auth.isLoggedIn && auth.user._id === comment.user._id && <i className="fa fa-trash delete" data-commentid={comment.id} onClick={deleteComment} ></i>}
+        {auth.isLoggedIn && auth.user._id === comment.user._id && <i className="fa fa-trash delete" onClick={deleteComment} ></i>}
       </li>
     </>
   );

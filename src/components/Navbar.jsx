@@ -14,21 +14,6 @@ function Navbar({auth,resetAuth}){
             console.log(e.response)
         }
     }   
-
-    /* Activate to test authentication
-    const sendIs = async ()=>{
-        try{
-            const res = await AuthService.isLoggedIn()
-            console.log(res)
-        }catch(e){
-            console.log(e.response)
-    }
-    }
-
-    Add to test authentication <li onClick={sendIs} >TestIsLoggedIn</li>
-    */
-    
-    
     
     return <nav className="nav-style">
                 <ul>
@@ -48,3 +33,22 @@ function Navbar({auth,resetAuth}){
 }
 
 export default Navbar;
+
+
+//Activate to test authentication
+/*
+const sendIs = async ()=>{
+    try{
+        const res = await AuthService.isLoggedIn()
+        console.log(res)
+    }catch(e){
+        console.log(e.response)
+}
+}
+*/
+
+//Add to HTML to test authentication 
+/*
+<li onClick={sendIs} >TestIsLoggedIn</li>
+*/
+    
