@@ -3,7 +3,7 @@ import axios from "axios"
 
 const service = axios.create({
     baseURL: process.env.REACT_APP_BACKEND_URL || "http://localhost:8080",
-    //withCredentials: true,
+   withCredentials: true,
 })
 
 const signup = async (email, password)=> {
@@ -23,6 +23,11 @@ const signin = async (email, password)=> {
     return res.data
 }
 
+const isLoggedIn = async (email, password)=> {
+    const res = await service.get("/loggedin",{email,password})
+    console.log(res)
+    return res.data
+}
 
 
 
@@ -30,7 +35,8 @@ const AuthService = {
     ...service,
     signup,
     logout,
-    signin
+    signin,
+    isLoggedIn
 }
 
 export default AuthService

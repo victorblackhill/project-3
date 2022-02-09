@@ -12,13 +12,17 @@ function OneComment({comment,updateComments,auth}) {
 
   console.log(auth,comment.user)
 
-
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   return (
     <>
-      <li key={comment._id} id={comment._id} className="comment">
+      <li key={comment._id} className="comment">
         <span>{comment.content}</span>
-        <p>by {comment.user.email}</p> 
+        <p>
+          <span>Posted on {months[new Date(comment.date).getMonth()]} {new Date(comment.date).getFullYear()} </span>
+          <span>By {comment.user.email}</span>
+        </p>
+        
         {auth.isLoggedIn && auth.user._id === comment.user._id && <i className="fa fa-trash delete" data-commentid={comment.id} onClick={deleteComment} ></i>}
       </li>
     </>

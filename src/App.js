@@ -36,8 +36,8 @@ function App() {
         <Routes>
           <Route path="/" element={<AllRecipes />} />
           <Route path="/recipes/:id" element={<OneRecipe auth={auth}/>} />
-          <Route path="/signup" element= {<Signup getAuth={getAuth} />} />
-          <Route path="/signin" element= {<Signin getAuth={getAuth} />} />
+          <Route path="/signup" element= {<Signup getAuth={getAuth} auth={auth} />} />
+          <Route path="/signin" element= {<Signin getAuth={getAuth} auth={auth} />} />
 
         </Routes>
 

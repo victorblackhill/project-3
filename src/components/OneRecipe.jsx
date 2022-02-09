@@ -44,8 +44,8 @@ function OneRecipe ({auth}){
                         <h3><i className="fas fa-mortar-pestle"></i></h3>
                         <h3>Café</h3>
                         <ul>
-                            <li>Grind: {aRecipe.grind} </li>
-                            <li>Weight: {aRecipe.weight}</li>
+                            <li key="mouture" >Grind: {aRecipe.grind} </li>
+                            <li key="poids" >Weight: {aRecipe.weight}</li>
                         </ul>
                     </div>
 
@@ -53,8 +53,8 @@ function OneRecipe ({auth}){
                     <h3><i className="fas fa-tint"></i></h3>
                         <h3>Eau</h3>
                             <ul>
-                                <li>Température: {aRecipe.temperature} </li>
-                                <li>Type d'eau: {aRecipe.water}</li>
+                                <li key="temperature">Température: {aRecipe.temperature} </li>
+                                <li key="eau">Type d'eau: {aRecipe.water}</li>
                             </ul>
                     </div>
                     
@@ -62,10 +62,10 @@ function OneRecipe ({auth}){
                     <h3><i className="fas fa-glass-whiskey"></i></h3>
                     <h3>Extraction</h3>
                         <ul>
-                            <li>Méthode: {aRecipe.extraction}</li>
-                            <li>Infusion
+                            <li key="methode">Méthode: {aRecipe.extraction}</li>
+                            <li key="infusion" >Infusion
                                 <ol>
-                                    {aRecipe.infusion?.map((pour)=> (<li>{pour.volume} mL during {pour.time} seconds</li>))}
+                                    {aRecipe.infusion?.map((pour,i)=> (<li key={i + pour.volume} >{pour.volume} mL during {pour.time} seconds</li>))}
                                 </ol>
                             </li>
                         </ul>
@@ -77,9 +77,9 @@ function OneRecipe ({auth}){
                 {auth.isLoggedIn && <AddComment setComments={theComments} id={id} updateComments={updateComments} auth={auth}/>}
                 
                 {<div className="comments">
-                <ul>{!auth.isLoggedIn && <li className="comment"> <Link to="/signin" >Signin to comment</Link></li>}</ul>
+                <ul>{!auth.isLoggedIn && <li  key="signin" className="comment"> <Link to="/signin" >Signin to comment</Link></li>}</ul>
                 <ul id="comment-list">
-                    {theComments.map((comment)=> <OneComment comment={comment} updateComments={updateComments} auth={auth}/> )}
+                    {theComments.map((comment,i)=> <OneComment comment={comment} updateComments={updateComments} auth={auth} i={i}/> )}
                     </ul>
                 </div>}
 

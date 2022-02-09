@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link,useNavigate,unstable_HistoryRouter } from 'react-router-dom';
 import AuthService from "./../api/AuthService"
 
-function Signup({getAuth}){
+function Signup({getAuth,auth}){
 
     const [user,setUser]= useState({email:"",password:""})
     const [message,setMessage] = useState("")
+
+    //redirection when loggedIn
+    const navigate = useNavigate()
+    useEffect(()=>{
+        if(auth.isLoggedIn) {navigate("/")}
+    },[auth])
+
 
     const handleChangeEmail = (e)=>{
         setUser({...user,email:e.target.value})
@@ -28,6 +35,8 @@ function Signup({getAuth}){
     }
 
     console.log(user,message)
+
+
     
 
     return <div className="block-comment" >
