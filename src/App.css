@@ -42,11 +42,20 @@
 /*COPY PASTA OF EXISTING STYLE.CSS FROM THE VIEWS -- - - - - - - - - - 
  --- - --- - -*/
 
-@import url(//db.onlinewebfonts.com/c/ebfdb8a9445aaa9d97a485a5c5a13156?family=canela);
-@font-face {font-family: "canela"; src: url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.eot"); src: url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.woff") format("woff"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.svg#canela") format("svg"); }
+ @import url(//db.onlinewebfonts.com/c/9da955c8511328b8b914cf9163add256?family=canela);
+ @font-face {font-family: "canela bold"; src: url("//db.onlinewebfonts.com/t/9da955c8511328b8b914cf9163add256.eot"); src: url("//db.onlinewebfonts.com/t/9da955c8511328b8b914cf9163add256.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9da955c8511328b8b914cf9163add256.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9da955c8511328b8b914cf9163add256.woff") format("woff"), url("//db.onlinewebfonts.com/t/9da955c8511328b8b914cf9163add256.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9da955c8511328b8b914cf9163add256.svg#canela") format("svg"); }
+
+ @import url(//db.onlinewebfonts.com/c/ebfdb8a9445aaa9d97a485a5c5a13156?family=canela);
+ @font-face {font-family: "canela regular"; src: url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.eot"); src: url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.woff") format("woff"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ebfdb8a9445aaa9d97a485a5c5a13156.svg#canela") format("svg"); }
 
 @import url(//db.onlinewebfonts.com/c/d0525b7bc409f0a67b670470d5cb960c?family=Graphik+Thin);
 @font-face {font-family: "Graphik Thin"; src: url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.eot"); src: url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.woff") format("woff"), url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d0525b7bc409f0a67b670470d5cb960c.svg#Graphik Thin") format("svg"); }
+
+@import url(//db.onlinewebfonts.com/c/c678102c438826011836d3c74fe1061b?family=GraphikLCGMedium);
+@font-face {font-family: "Graphik Bold"; src: url("//db.onlinewebfonts.com/t/d20eb52d29d9f6d56c1c8fc0eefc560e.eot"); src: url("//db.onlinewebfonts.com/t/d20eb52d29d9f6d56c1c8fc0eefc560e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d20eb52d29d9f6d56c1c8fc0eefc560e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d20eb52d29d9f6d56c1c8fc0eefc560e.woff") format("woff"), url("//db.onlinewebfonts.com/t/d20eb52d29d9f6d56c1c8fc0eefc560e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d20eb52d29d9f6d56c1c8fc0eefc560e.svg#Graphik Bold") format("svg"); }
+
+@import url(//db.onlinewebfonts.com/c/f6caec755c771293020e177cd16a3dec?family=GraphikLCGRegular);
+@font-face {font-family: "GraphikLCGRegular"; src: url("//db.onlinewebfonts.com/t/f6caec755c771293020e177cd16a3dec.eot"); src: url("//db.onlinewebfonts.com/t/f6caec755c771293020e177cd16a3dec.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/f6caec755c771293020e177cd16a3dec.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/f6caec755c771293020e177cd16a3dec.woff") format("woff"), url("//db.onlinewebfonts.com/t/f6caec755c771293020e177cd16a3dec.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/f6caec755c771293020e177cd16a3dec.svg#GraphikLCGRegular") format("svg"); }
 
 :root{
     --alondra-green:#234145;
@@ -55,16 +64,30 @@
     --alondra-teal:#ecdcdb;
 
 
-    --alondra-font-complex:"canela";
-    --alondra-font-simple:"Graphik Thin"
+    --alondra-font-complex:"canela regular";
+    --alondra-font-complex-bold:"canela bold";
+    --alondra-font-thin:"Graphik Thin";
+    --alondra-font-bold:"Graphik Bold";
+    --alondra-font-simple:"GraphikLCGRegular"
+
+
 }
 
 :root{
     background-color: var(--alondra-gray);
     color: var(--alondra-green);
-    font-family: var(--alondra-font-simple), Arial, Helvetica, sans-serif;
+
     max-width:fit-content;
   }
+
+body{
+  font-family: var(--alondra-font-simple), Arial, Helvetica, sans-serif;
+  padding-bottom:20px
+}
+
+h1 {
+  font-family: var(--alondra-font-complex-bold),Arial, Helvetica, sans-serif
+}
 
 
 h1,h2 {
@@ -80,7 +103,45 @@ footer {
   font-size:8px
 }
 
+/* Navbar style-------
+*/
 
+.nav-style{
+  position: fixed;
+  width: 35%;
+  right:0;
+  display:flex;
+  align-items: flex-end;
+  background-color: var( --alondra-gray);
+
+}
+.nav-style ul{
+  display:flex;
+  flex-direction:column;
+  align-content: flex-end;
+  flex-wrap:wrap;
+  padding-left:10px;
+  margin-bottom:0;
+}
+.nav-style li{
+  list-style: none;
+  padding-bottom:10px;
+  padding-right:10px;
+}
+
+.nav-style img{
+  
+  width:100px;
+  padding-right:10px; 
+  padding-bottom:10px;
+}
+
+.transparent{
+  background-color: transparent;
+  display:flex;
+  justify-content:end;
+  padding-right:10px
+}
 /* 
   Blocks styling -----------------------------------
 */
@@ -124,9 +185,24 @@ i {
 
 .block ul>li{
   margin-bottom: 10px;
+  
 
 }
 
+.heart-block{
+  padding-left:10px;
+  padding-right:10px;
+  font-family: var(--alondra-font-simple)
+}
+
+.heart-block i{
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.heart-block .fas{
+  color:var(--alondra-orange)
+}
 /* Comments ----------------------------------------------*/
 .comments ul{
   list-style-type:none;

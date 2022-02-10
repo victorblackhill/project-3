@@ -47,12 +47,19 @@ function OneRecipe ({auth,getAuth}){
 
     },[])
 
-
-    console.log(">>> >>> ",auth.user.favorites)
-
-
-    return <>   <h1>{aRecipe.name}</h1>
+    return <>  <div className="heart-block" > 
+                <h1>{aRecipe.name}</h1>
                 <h2>{aRecipe.description}</h2>
+                
+                {auth.isLoggedIn && auth.user.favorites.indexOf(aRecipe._id)>-1 &&
+                    <>  <p><i onClick={unFavorite} className="fas fa-heart"></i>
+                            Une de mes recettes préférées</p>
+                    </>}
+                {auth.isLoggedIn && auth.user.favorites.indexOf(aRecipe._id)===-1 &&
+                    <>  <p><i onClick={favorite} className="far fa-heart"></i>
+                            Ajouter à mes recettes préférées</p>
+                    </>}
+                </div>
 
                 <div className="blocks">
 
@@ -87,11 +94,6 @@ function OneRecipe ({auth,getAuth}){
                         </ul>
                     </div>
                     
-                </div>
-
-                <div className="comments" >
-                {auth.isLoggedIn && auth.user.favorites.indexOf(aRecipe._id)>-1 && <i onClick={unFavorite} className="fas fa-heart"></i>}
-                {auth.isLoggedIn && auth.user.favorites.indexOf(aRecipe._id)===-1 && <i onClick={favorite} className="far fa-heart"></i>}
                 </div>
 
                 <h2>Comments</h2>

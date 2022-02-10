@@ -6,6 +6,9 @@ function Navbar({auth,resetAuth}){
 
     const location = useLocation()
     
+    const [hide,setHide]=useState(0)
+    const toggleHide = ()=>{setHide(!hide)}
+    
     const send = async ()=>{
         try{
             const res = await AuthService.logout()
@@ -13,25 +16,46 @@ function Navbar({auth,resetAuth}){
         }catch(e){
             console.log(e.response)
         }
-    }   
+    }
     
-    return <nav className="nav-style">
+ 
+    
+    return <>
+
+            {hide &&
+            <>
+                <nav className="nav-style transparent" >
+                <ul className="transparent">
+                <i onClick={toggleHide} className="fas fa-bars" > </i>
+                </ul>
+                </nav>
+            </>   }
+
+           {!hide &&
+            <>
+
+
+
+            <nav className="nav-style">
                 <ul>
-                    <li><Link to="/">List of recipes</Link></li>
+                    <i onClick={toggleHide} className="fas fa-bars"></i>
+                    <img src="/alondra_logo.png"></img>
+                    <li onClick={toggleHide}><Link to="/">List of recipes</Link></li>
                     {auth.isLoggedIn    &&  
-                    <>  <li><Link to="/FavoriteRecipes">Recettes préférées</Link></li>    
-                        <li onClick={send}><Link to={location.pathname}>Logout</Link></li>
+                    <>  <li onClick={toggleHide}><Link to="/FavoriteRecipes">Recettes préférées</Link></li>    
+                        <li onClick={toggleHide} onClick={send}><Link to={location.pathname}>Logout</Link></li>
                     </>}
                     {!auth.isLoggedIn   &&  
-                    <>  <li><Link to="/Signin">Signin</Link></li>
-                        <li><Link to="/signup">Signup</Link></li>
+                    <>  <li onClick={toggleHide} ><Link to="/Signin">Signin</Link></li>
+                        <li onClick={toggleHide} ><Link to="/signup">Signup</Link></li>
                     </>}
                 </ul>
-                
-                
-                
                 {auth.isLoggedIn && <p> Welcome {auth.user.email} </p>}
             </nav>
+            </>} 
+
+
+            </>
 }
 
 export default Navbar;
