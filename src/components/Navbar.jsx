@@ -18,12 +18,14 @@ function Navbar({auth,resetAuth}){
     return <nav className="nav-style">
                 <ul>
                     <li><Link to="/">List of recipes</Link></li>
-                    
-                    {!auth.isLoggedIn   &&  <>  <li><Link to="/Signin">Signin</Link></li>
-                                                <li><Link to="/signup">Signup</Link></li>
-                                            </>}
-
-                    {auth.isLoggedIn    && <li onClick={send}><Link to={location.pathname}>Logout</Link></li>}
+                    {auth.isLoggedIn    &&  
+                    <>  <li><Link to="/FavoriteRecipes">Recettes préférées</Link></li>    
+                        <li onClick={send}><Link to={location.pathname}>Logout</Link></li>
+                    </>}
+                    {!auth.isLoggedIn   &&  
+                    <>  <li><Link to="/Signin">Signin</Link></li>
+                        <li><Link to="/signup">Signup</Link></li>
+                    </>}
                 </ul>
                 
                 

@@ -3,6 +3,7 @@ import './App.css';
 import {Routes, Route} from "react-router-dom"
 import AllRecipes from "./components/AllRecipes.jsx"
 import OneRecipe from "./components/OneRecipe.jsx"
+import FavoriteRecipes from "./components/FavoriteRecipes"
 import Signup from "./components/Signup"
 import Signin from "./components/Signin"
 import {useState} from "react"
@@ -35,6 +36,7 @@ function App() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"></link>
         <Routes>
           <Route path="/" element={<AllRecipes />} />
+          <Route path="/FavoriteRecipes" element={<FavoriteRecipes auth={auth} />} />
           <Route path="/recipes/:id" element={<OneRecipe auth={auth} getAuth={getAuth}/>} />
           <Route path="/signup" element= {<Signup getAuth={getAuth} auth={auth} />} />
           <Route path="/signin" element= {<Signin getAuth={getAuth} auth={auth} />} />
