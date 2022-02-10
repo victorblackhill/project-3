@@ -4,6 +4,7 @@ import axios from "axios"
 const service = axios.create({
     baseURL: process.env.REACT_APP_BACKEND_URL || "http://localhost:8080",
    withCredentials: true,
+  
 })
 
 const signup = async (email, password)=> {
