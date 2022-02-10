@@ -12,7 +12,7 @@ function App() {
 
   const [auth,setAuth]=useState({
     isLoggedIn: false,
-    user: null
+    user: {favorites:[]}
   })
 
   const getAuth = (userObj,loggedIn)=>{
@@ -24,7 +24,7 @@ function App() {
 
   const resetAuth = ()=>setAuth({
     isLoggedIn: false,
-    user: null
+    user: {favorites:[]}
   })
 
   console.log("theuser",auth)
@@ -35,7 +35,7 @@ function App() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"></link>
         <Routes>
           <Route path="/" element={<AllRecipes />} />
-          <Route path="/recipes/:id" element={<OneRecipe auth={auth}/>} />
+          <Route path="/recipes/:id" element={<OneRecipe auth={auth} getAuth={getAuth}/>} />
           <Route path="/signup" element= {<Signup getAuth={getAuth} auth={auth} />} />
           <Route path="/signin" element= {<Signin getAuth={getAuth} auth={auth} />} />
 

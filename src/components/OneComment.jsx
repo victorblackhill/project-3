@@ -16,8 +16,7 @@ function OneComment({comment,updateComments,auth}) {
         try{
         //create a mongo request to be treated
         console.log(">>>>",{...comment,content:e.target.textContent})
-        const addedComment = await APIHandler.post("/comment/update", {...comment,content:e.target.textContent})
-        console.log(addedComment)
+        await APIHandler.post("/comment/update", {...comment,content:e.target.textContent})
         updateComments()
         }catch(err){console.error(err)
     }

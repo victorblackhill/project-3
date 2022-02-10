@@ -5,7 +5,8 @@ import { Link, useParams } from "react-router-dom";
 import OneComment from "./OneComment"
 import AddComment from "./AddComment"
 
-function OneRecipe ({auth}){
+
+function OneRecipe ({auth,getAuth}){
     
     const id = useParams().id
     const [aRecipe,setRecipe] = useState({})
@@ -17,7 +18,22 @@ function OneRecipe ({auth}){
             const comments = await APIHandler.post("/recipes/comments",{recipe:id})
             setComments(comments.data.comments)
         }catch(e){console.error(e)}
+    }
 
+    const favorite = async () =>{
+        try{
+            const updatedUser = await APIHandler.post("/user/update",{...auth.user,favorites:[...auth.user.favorites,aRecipe._id]})
+            console.log(updatedUser)
+            getAuth(updatedUser.data.myFetch,auth.isLoggedIn)
+        }catch(e){console.error(e)}
+    }
+
+    const unFavorite = async()=>{
+        try{
+            const updatedUser = await APIHandler.post("/user/update",{...auth.user,favorites:auth.user.favorites.filter((recipe)=>recipe!==aRecipe._id)})
+            console.log(updatedUser)
+            getAuth(updatedUser.data.myFetch,auth.isLoggedIn)
+        }catch(e){console.error(e)}
     }
 
     useEffect(async ()=>{
@@ -31,8 +47,8 @@ function OneRecipe ({auth}){
 
     },[])
 
-    console.log(">>>>",theComments)
 
+    console.log(">>> >>> ",auth.user.favorites)
 
 
     return <>   <h1>{aRecipe.name}</h1>
@@ -73,12 +89,18 @@ function OneRecipe ({auth}){
                     
                 </div>
 
+                <div className="comments" >
+                {auth.isLoggedIn && auth.user.favorites.indexOf(aRecipe._id)>-1 && <i onClick={unFavorite} className="fas fa-heart"></i>}
+                {auth.isLoggedIn && auth.user.favorites.indexOf(aRecipe._id)===-1 && <i onClick={favorite} className="far fa-heart"></i>}
+                </div>
+
                 <h2>Comments</h2>
                 {auth.isLoggedIn && <AddComment setComments={theComments} id={id} updateComments={updateComments} auth={auth}/>}
                 
                 {<div className="comments">
                 <ul>{!auth.isLoggedIn && <li  key="signin" className="comment"> <Link to="/signin" >Signin to comment</Link></li>}</ul>
-                <ul id="comment-list">
+                <ul className="comment-list">
+            
                     {theComments.map((comment,i)=> <OneComment comment={comment} updateComments={updateComments} auth={auth} i={i}/> )}
                     </ul>
                 </div>}
@@ -88,6 +110,3 @@ function OneRecipe ({auth}){
 
 export default OneRecipe
 
-
-//don't remember what this was used for...
-//<input id="recipe" type="hidden" name="recipe" value={aRecipe._id}/>

@@ -131,8 +131,18 @@ i {
 .comments ul{
   list-style-type:none;
   padding-inline-start:0;
-  
+  display:flex;
+  flex-direction:column-reverse;
 }
+
+/*
+.comment-list{
+  overflow:scroll;
+  height:400px;
+  width:80%
+}
+
+*/
 
 .comments li {
   background-color: var(--alondra-teal);
@@ -149,8 +159,7 @@ i {
 }
 
 .comments ul{
-  display:flex;
-  flex-direction:column-reverse
+
 }
 
 
