@@ -6,7 +6,7 @@ function Navbar({auth,resetAuth}){
 
     const location = useLocation()
     
-    const [hide,setHide]=useState(0)
+    const [hide,setHide]=useState(1)
     const toggleHide = ()=>{setHide(!hide)}
     
     const send = async ()=>{
