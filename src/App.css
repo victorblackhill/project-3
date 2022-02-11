@@ -141,15 +141,27 @@ footer {
 
 /* Footer style-------
 */
-footer{
-  background-color: var(--alondra-green);
-  color:var(--alondra-gray);
-  padding:20px;
-  margin: 10px;
+footer, .footer-div{
   display:flex;
   flex-direction: row;
   justify-content:space-between;
   align-items: center;
+  margin: 10px;
+
+}
+
+footer {
+  background-color: var(--alondra-green);
+  color:var(--alondra-gray);
+  padding:20px;
+  padding:20px;
+
+}
+
+.green{
+
+  width:20px;
+  height:20px;
 }
 
 footer>a:link{
