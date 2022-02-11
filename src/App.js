@@ -8,6 +8,7 @@ import Signup from "./components/Signup"
 import Signin from "./components/Signin"
 import {useState} from "react"
 import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -40,8 +41,9 @@ function App() {
           <Route path="/recipes/:id" element={<OneRecipe auth={auth} getAuth={getAuth}/>} />
           <Route path="/signup" element= {<Signup getAuth={getAuth} auth={auth} />} />
           <Route path="/signin" element= {<Signin getAuth={getAuth} auth={auth} />} />
-
         </Routes>
+        <Footer/>
+        
 
     </>
   );

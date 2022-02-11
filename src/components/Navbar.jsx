@@ -40,6 +40,10 @@ function Navbar({auth,resetAuth}){
                 <ul>
                     <i onClick={toggleHide} className="fas fa-bars"></i>
                     <img src="/alondra_logo.png"></img>
+                    
+                    {auth.isLoggedIn && <> <li> <span>Welcome </span> <br/>
+                                        <span>{auth.user.email}</span>
+                                        </li> </> } 
                     <li onClick={toggleHide}><Link to="/">List of recipes</Link></li>
                     {auth.isLoggedIn    &&  
                     <>  <li onClick={toggleHide}><Link to="/FavoriteRecipes">Recettes préférées</Link></li>    
@@ -50,7 +54,7 @@ function Navbar({auth,resetAuth}){
                         <li onClick={toggleHide} ><Link to="/signup">Signup</Link></li>
                     </>}
                 </ul>
-                {auth.isLoggedIn && <p> Welcome {auth.user.email} </p>}
+
             </nav>
             </>} 
 
