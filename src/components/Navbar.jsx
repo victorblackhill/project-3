@@ -44,10 +44,10 @@ function Navbar({auth,resetAuth}){
                     {auth.isLoggedIn && <> <li> <span>Welcome </span> <br/>
                                         <span>{auth.user.email}</span>
                                         </li> </> } 
-                    <li onClick={toggleHide}><Link to="/">List of recipes</Link></li>
+                    <li onClick={toggleHide}><Link to="/">Toutes les recetts</Link></li>
                     {auth.isLoggedIn    &&  
-                    <>  <li onClick={toggleHide}><Link to="/FavoriteRecipes">Recettes préférées</Link></li>    
-                        <li onClick={toggleHide} onClick={send}><Link to={location.pathname}>Logout</Link></li>
+                    <>  <li onClick={toggleHide}><Link to="/FavoriteRecipes">Mes recettes préférées</Link></li>    
+                        <li onClick={toggleHide} onClick={send}><Link to={location.pathname}>Déconnection</Link></li>
                     </>}
                     {!auth.isLoggedIn   &&  
                     <>  <li onClick={toggleHide} ><Link to="/Signin">Signin</Link></li>

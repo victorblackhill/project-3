@@ -46,6 +46,13 @@ function OneRecipe ({auth,getAuth}){
 
 
     },[])
+    const tempsTotalSec = aRecipe.infusion?.reduce((cumul,val)=>val.time+cumul,0)%60
+    const strSec = String(tempsTotalSec).length < 2 ? "0"+String(tempsTotalSec) :String(tempsTotalSec)
+    const tempsTotalMin = (aRecipe.infusion?.reduce((cumul,val)=>val.time+cumul,0) - tempsTotalSec)/60
+
+    
+    
+   // const tempsTotalSec =aRecipe.infusion.reduce((cumul,pour)=>cumul+pour.time,0) % 60
 
     return <>  <div className="heart-block" > 
                 <h1>{aRecipe.name}</h1>
@@ -67,8 +74,12 @@ function OneRecipe ({auth,getAuth}){
                         <h3><i className="fas fa-mortar-pestle"></i></h3>
                         <h3>Café</h3>
                         <ul>
-                            <li key="mouture" >Grind: {aRecipe.grind} </li>
-                            <li key="poids" >Weight: {aRecipe.weight}</li>
+                            <li key="poids" >Poids : {aRecipe.weight} g</li>
+                            <li key="mouture" >Mouture : {aRecipe.grind} pour moulin Baratza Sette 30</li>
+                            <p>
+                                <li> <a href="https://honestcoffeeguide.com/guides/coffee-grind-size-chart" target="_blank">Equivalences entre les moulins</a></li>
+                            </p>
+                            
                         </ul>
                     </div>
 
@@ -76,8 +87,8 @@ function OneRecipe ({auth,getAuth}){
                     <h3><i className="fas fa-tint"></i></h3>
                         <h3>Eau</h3>
                             <ul>
-                                <li key="temperature">Température: {aRecipe.temperature} </li>
-                                <li key="eau">Type d'eau: {aRecipe.water}</li>
+                                <li key="temperature">Température : {aRecipe.temperature} °C</li>
+                                <li key="eau">Type d'eau : {aRecipe.water}</li>
                             </ul>
                     </div>
                     
@@ -85,22 +96,28 @@ function OneRecipe ({auth,getAuth}){
                     <h3><i className="fas fa-glass-whiskey"></i></h3>
                     <h3>Extraction</h3>
                         <ul>
-                            <li key="methode">Méthode: {aRecipe.extraction}</li>
-                            <li key="infusion" >Infusion
+                            <li key="methode">Méthode : {aRecipe.extraction}</li>
+                            <li>Durée totale : {tempsTotalMin}min{strSec}</li>
+                            <li key="infusion">Infusion
                                 <ol>
-                                    {aRecipe.infusion?.map((pour,i)=> (<li key={i + pour.volume} >{pour.volume} mL during {pour.time} seconds</li>))}
+                                    {aRecipe.infusion?.map((pour,i)=> (<li key={i + pour.volume} >{pour.volume} mL pendant {pour.time} secondes</li>))}
                                 </ol>
                             </li>
                         </ul>
                     </div>
+                    <div className = "block">
+                        <iframe width="230"
+                            src="https://www.youtube.com/embed/_44o-lCopNU">
+                        </iframe>
+                        </div>
                     
                 </div>
 
-                <h2>Comments</h2>
+                <h2>Commentaires</h2>
                 {auth.isLoggedIn && <AddComment setComments={theComments} id={id} updateComments={updateComments} auth={auth}/>}
                 
                 {<div className="comments">
-                <ul>{!auth.isLoggedIn && <li  key="signin" className="comment"> <Link to="/signin" >Signin to comment</Link></li>}</ul>
+                <ul>{!auth.isLoggedIn && <li  key="signin" className="comment"> <Link to="/signin" >Identifiez-vous et laissez vos commentaires</Link></li>}</ul>
                 <ul className="comment-list">
             
                     {theComments.map((comment,i)=> <OneComment comment={comment} updateComments={updateComments} auth={auth} i={i}/> )}

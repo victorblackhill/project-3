@@ -208,8 +208,16 @@ footer>img{
   background-color: var(--alondra-teal);
   margin:10px;
   padding:10px;
-  width: 250px
+  width: 250px;
+  flex-wrap: wrap;
 
+
+}
+
+.block>iframe{
+  display:flex;
+  align-self:center;
+  justify-self:center
 }
 
 h3 {

@@ -20,7 +20,7 @@ function FavoriteRecipes({auth}) {
   return (
     <>
       {" "}
-      <h1>Mes recettes préférées</h1>
+      <h1><i className="fas fa-heart"></i> Mes recettes préférées</h1>
       <div key="blocks" className="blocks">
         <>
           {recipes.map((recipe) => (

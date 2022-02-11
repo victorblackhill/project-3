@@ -19,7 +19,7 @@ function AllRecipes() {
   return (
     <>
       {" "}
-      <h1>Our recipes</h1>
+      <h1><i className="fas fa-coffee"></i> Nos recettes</h1>
       <div key="blocks" className="blocks">
         <>
           {recipes.map((recipe) => (

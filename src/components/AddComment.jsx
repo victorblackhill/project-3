@@ -26,8 +26,8 @@ function AddComment ({setComments,id,updateComments,auth}){
 
     
     return  <div className = "block-comment">
-                <textarea value={myComment} onChange={textListener} className="block" type="textarea" id="comment" name="content"  placeholder="add your comments"/>
-                <button type="button" onClick={myComment.length>0?sendComment:()=>{}}>Comment</button>
+                <textarea value={myComment} onChange={textListener} className="block" type="textarea" id="comment" name="content"  placeholder="Votre commentaire"/>
+                <button type="button" onClick={myComment.length>0?sendComment:()=>{}}>Ajouter le commentaire</button>
             </div>
 
 

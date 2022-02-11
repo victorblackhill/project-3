@@ -47,7 +47,7 @@ function Signin({getAuth,auth}){
                     />
                 </label>
                 <label>
-                    <h4>Password</h4>
+                    <h4>Mot de passe</h4>
                     <input
                         className="block"
                         type="password"
@@ -57,7 +57,7 @@ function Signin({getAuth,auth}){
                         />
                 </label>
                 <button onClick={send}>Accéder</button>
-                <h3>Vous n'avez pas encore votre compte ? C'est par <Link to={"/signup"} >ici</Link> !</h3>
+                <h3>Nouvel utilisateur ? <br/> C'est par <Link to={"/signup"} >ici</Link> !</h3>
                 
 
     </div>
