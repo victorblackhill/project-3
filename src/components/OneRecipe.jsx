@@ -105,7 +105,9 @@ function OneRecipe ({auth,getAuth}){
                             </li>
                         </ul>
                     </div>
-                    <div className = "block">
+                    <div className = "block if">
+                        <h3><i className="fas fa-video"></i></h3>
+                        <h3>Vidéo explicative</h3>
                         <iframe width="230"
                             src="https://www.youtube.com/embed/_44o-lCopNU">
                         </iframe>

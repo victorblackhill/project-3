@@ -214,10 +214,8 @@ footer>img{
 
 }
 
-.block>iframe{
-  display:flex;
-  align-self:center;
-  justify-self:center
+.if{
+
 }
 
 h3 {
